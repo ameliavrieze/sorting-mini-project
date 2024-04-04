@@ -45,4 +45,33 @@ public class SortTester {
     assertArrayEquals(original, expected);
   } // orderedStringTest
 
+  @Test
+  public void emptyArrayTest() {
+    String[] original = {};
+    String[] expected = {};
+    sorter.sort(original, (x, y) -> x.compareTo(y));
+    assertArrayEquals(original, expected);
+  }
+
+  @Test 
+  public void sortReversedIntsTest() {
+    Integer[] original = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    Integer[] expected = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    sorter.sort(original, (x, y) -> x.compareTo(y));
+    assertArrayEquals(original, expected);
+  }
+
+  @Test 
+  public void sortOneElement() {
+    Integer[] original = {1};
+    Integer[] expected = {1};
+    sorter.sort(original, (x, y) -> x.compareTo(y));
+    assertArrayEquals(original, expected);
+  }
+
+  //Test 4
+
+  //Test 5
+
+
 } // class SortTester

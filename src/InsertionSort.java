@@ -3,7 +3,7 @@ import java.util.Comparator;
 /**
  * Sort using insertion sort.
  *
- * @author Your Name Here
+ * @author Amelia Vrieze
  */
 
 public class InsertionSort implements Sorter {
@@ -33,6 +33,15 @@ public class InsertionSort implements Sorter {
 
   @Override
   public <T> void sort(T[] values, Comparator<? super T> order) {
-    // STUB
+    int pointer;
+    for (pointer = 1; pointer < values.length; pointer++) {
+      T current = values[pointer];
+      int i = pointer - 1;
+      while (i >=0 && order.compare(values[i], current) > 0) {
+        values[i + 1] = values[i];
+        values[i] = current;
+        i--;
+      }
+    }
   } // sort(T[], Comparator<? super T>
 } // class InsertionSort
