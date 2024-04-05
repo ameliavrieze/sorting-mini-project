@@ -3,7 +3,7 @@ import java.util.Comparator;
 /**
  * Sort using merge sort.
  *
- * @author Your Name Here
+ * @author Amelia Vrieze
  */
 
 public class MergeSort implements Sorter {
