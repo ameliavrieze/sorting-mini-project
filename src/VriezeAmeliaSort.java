@@ -2,11 +2,14 @@ import java.util.Comparator;
 
 
 /**
- * A sorting method created by Amelia Vrieze
+ * A sorting method created by Amelia Vrieze. 
+ * Decides whether to use InsertionSort, QuickSort, or return immediately 
+ * depending on the size of the array to be sorted.
  * @author Amelia Vrieze
  * 
  */
 public class VriezeAmeliaSort implements Sorter{
+  public static Sorter SORTER = new VriezeAmeliaSort();
 
   public VriezeAmeliaSort(){}
 
@@ -16,7 +19,7 @@ public class VriezeAmeliaSort implements Sorter{
     if (size < 2) {
       return;
     }
-    if (size < 10) {
+    if (size < 20) {
       InsertionSort.SORTER.sort(values, order);
     } else {
       MergeSort.SORTER.sort(values, order);

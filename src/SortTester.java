@@ -69,9 +69,36 @@ public class SortTester {
     assertArrayEquals(original, expected);
   }
 
-  //Test 4
+  @Test
+  public void randomArraySort() {
+    Integer[] randArr = new Integer[20];
+    for (int i = 0; i < 20; i++) {
+      randArr[i] = (int)(Math.random() * 20);
+    }
+    sorter.sort(randArr, (x, y) -> x.compareTo(y));
+    boolean sorted = true;
+    for (int i = 0; i < randArr.length - 1; i++) {
+      if (randArr[i] > randArr[i + 1]) {
+        sorted = false;
+      }
+    }
+    assertEquals(sorted, true);
+  }
 
   //Test 5
+  @Test
+  public void bigArraySort() {
+    Integer[] bigArray = new Integer[1000];
+    Integer[] expected = new Integer[1000];
+    for (int i = 0; i < 1000; i++) {
+      bigArray[i] = 1000 - i;
+    }
+    for (int i = 1; i < 1001; i++) {
+      expected[i - 1] = i;
+    }
+    sorter.sort(bigArray, (x,y) -> x.compareTo(y));
+    assertArrayEquals(bigArray, expected);
+  }
 
 
 } // class SortTester
